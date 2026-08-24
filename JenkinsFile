@@ -23,13 +23,16 @@ pipeline {
         }
     }
 
-    publishHTML([
-    allowMissing: true,
-    alwaysLinkToLastBuild: true,
-    keepAll: true,
-    reportDir: 'target/cucumber-reports',
-    reportFiles: 'cucumber.html',
-    reportName: 'Cucumber Test Report',
-    useWrapperFileDirectly: true
-])
+    post {
+        always {
+            publishHTML(target: [
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'target/cucumber-reports',
+                reportFiles: 'cucumber.html',
+                reportName: 'Cucumber Test Report'
+            ])
+        }
+    }
 }
