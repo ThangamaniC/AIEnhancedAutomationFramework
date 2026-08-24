@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="AI Enhanced Automation Suite">
+
+    <!--parameter name="browser" value="chrome"/-->
+
+    <test name="OrangeHRM Tests">
+
+        <classes>
+
+            <class name="runners.TestRunner"/>
+
+        </classes>
+
+    </test>
+
+</suite>
