@@ -38,6 +38,9 @@ pipeline {
             archiveArtifacts artifacts: 'target/screenshots/**/*',
                              allowEmptyArchive: true,
                              fingerprint: true
+            archiveArtifacts artifacts: 'target/logs/**/*',
+                         allowEmptyArchive: true,
+                         fingerprint: true
         }
     }
 }
