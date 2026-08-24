@@ -25,6 +25,7 @@ pipeline {
 
     post {
         always {
+
             publishHTML(target: [
                 allowMissing: true,
                 alwaysLinkToLastBuild: true,
@@ -33,6 +34,10 @@ pipeline {
                 reportFiles: 'ExtentReport.html',
                 reportName: 'Extent Test Report'
             ])
+
+            archiveArtifacts artifacts: 'target/screenshots/**/*',
+                             allowEmptyArchive: true,
+                             fingerprint: true
         }
     }
 }

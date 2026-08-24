@@ -15,7 +15,7 @@ Feature: OrangeHRM Login
     
     Examples:
     	|username | password|
-    	|Admin    |admin123 |
+    	|Admin    |admin1234 |
     	
     
   @Regression @Login
