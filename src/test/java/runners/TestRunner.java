@@ -27,11 +27,11 @@ import io.cucumber.testng.CucumberOptions;
 	@Listeners(ExtentReportUtilityListener.class)
 	public class TestRunner extends AbstractTestNGCucumberTests {
 
-		@BeforeClass(alwaysRun = true)
+		/*@BeforeClass(alwaysRun = true)
 	    @Parameters("browser")
 	    public void setUpClass(String browser) {
 	        ConfigReader.setBrowser(browser);
-	    }
+	    }*/
 
 	    @Override
 	    @DataProvider(parallel = true)

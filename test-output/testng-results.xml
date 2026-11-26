@@ -1,126 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-10-20T08:38:52 IST" name="AI Enhanced Automation Suite" finished-at="2026-10-20T08:42:32 IST" duration-ms="219175">
+  <suite started-at="2026-11-26T07:39:52 IST" name="Default suite" finished-at="2026-11-26T07:40:12 IST" duration-ms="19181">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@2dd29a59]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@5f7b97da]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@6b7906b3]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@25e2ab5a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-10-20T08:38:52 IST" name="Chrome Tests" finished-at="2026-10-20T08:39:56 IST" duration-ms="63884">
+    <test started-at="2026-11-26T07:39:52 IST" name="Default test" finished-at="2026-11-26T07:40:12 IST" duration-ms="19181">
       <class name="runners.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.TestRunner@2dd29a59]" started-at="2026-10-20T08:38:53 IST" name="setUpClass" finished-at="2026-10-20T08:38:54 IST" duration-ms="922" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.TestRunner@25e2ab5a]" started-at="2026-11-26T07:39:53 IST" name="setUpClass" finished-at="2026-11-26T07:39:54 IST" duration-ms="1419" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@f667fe]]>
+                <![CDATA[org.testng.TestRunner@38e7ed69]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="setUpClass(java.lang.String)[pri:0, instance:runners.TestRunner@2dd29a59]" started-at="2026-10-20T08:38:54 IST" name="setUpClass" finished-at="2026-10-20T08:38:54 IST" duration-ms="15" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@2dd29a59]" started-at="2026-10-20T08:38:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-10-20T08:39:56 IST" duration-ms="62395" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Successful login with valid credentials"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["OrangeHRM Login"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Failed to decode response from marionette
-Build info: version: '4.47.0', revision: '9175ed9 9175ed94d83e87cc3abeb7c9fd91367d17849d35'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f53601f8-bb0e-4489-a3d8-c4e4f6dfbe04, findElement {value=username, using=name}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 158.0, moz:accessibilityChecks: false, moz:buildID: 20261007201254, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 10796, moz:profile: C:\Users\BHARATHI\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f53601f8-bb0e-4489-a3d8-c4e4f6dfbe04]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
-Build info: version: '4.47.0', revision: '9175ed9 9175ed94d83e87cc3abeb7c9fd91367d17849d35'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [f53601f8-bb0e-4489-a3d8-c4e4f6dfbe04, findElement {value=username, using=name}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 158.0, moz:accessibilityChecks: false, moz:buildID: 20261007201254, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 10796, moz:profile: C:\Users\BHARATHI\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f53601f8-bb0e-4489-a3d8-c4e4f6dfbe04
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:653)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:173)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:67)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:417)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:411)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:222)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:215)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:210)
-at pages.BasePage.waitForVisibility(BasePage.java:60)
-at pages.BasePage.type(BasePage.java:100)
-at pages.LoginPage.enterUsername(LoginPage.java:47)
-at stepdefinitions.LoginSteps.user_enters_username(LoginSteps.java:36)
-at ✽.User enters username "Admin"(file:///C:/Users/BHARATHI/eclipse-workspace/AIEnhancedAutomationFramework/src/test/resources/features/Login.feature:11)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.TestRunner@2dd29a59]" started-at="2026-10-20T08:39:56 IST" name="tearDownClass" finished-at="2026-10-20T08:39:56 IST" duration-ms="114" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- runners.TestRunner -->
-    </test> <!-- Chrome Tests -->
-    <test started-at="2026-10-20T08:38:52 IST" name="Edge Tests" finished-at="2026-10-20T08:42:29 IST" duration-ms="216192">
-      <class name="runners.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.TestRunner@6b7906b3]" started-at="2026-10-20T08:38:53 IST" name="setUpClass" finished-at="2026-10-20T08:38:54 IST" duration-ms="923" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@7e928e2f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="setUpClass(java.lang.String)[pri:0, instance:runners.TestRunner@6b7906b3]" started-at="2026-10-20T08:38:54 IST" name="setUpClass" finished-at="2026-10-20T08:38:54 IST" duration-ms="15" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[edge]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@6b7906b3]" started-at="2026-10-20T08:38:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-10-20T08:42:29 IST" duration-ms="214857" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@25e2ab5a]" started-at="2026-11-26T07:39:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-11-26T07:40:11 IST" duration-ms="17033" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -136,57 +37,11 @@ at ✽.User enters username "Admin"(file:///C:/Users/BHARATHI/eclipse-workspace/
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.TestRunner@6b7906b3]" started-at="2026-10-20T08:42:29 IST" name="tearDownClass" finished-at="2026-10-20T08:42:29 IST" duration-ms="28" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.TestRunner@25e2ab5a]" started-at="2026-11-26T07:40:11 IST" name="tearDownClass" finished-at="2026-11-26T07:40:12 IST" duration-ms="111" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- runners.TestRunner -->
-    </test> <!-- Edge Tests -->
-    <test started-at="2026-10-20T08:38:52 IST" name="Firefox Tests" finished-at="2026-10-20T08:42:32 IST" duration-ms="219175">
-      <class name="runners.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.TestRunner@5f7b97da]" started-at="2026-10-20T08:38:53 IST" name="setUpClass" finished-at="2026-10-20T08:38:54 IST" duration-ms="924" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@788fcafb]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="setUpClass(java.lang.String)[pri:0, instance:runners.TestRunner@5f7b97da]" started-at="2026-10-20T08:38:54 IST" name="setUpClass" finished-at="2026-10-20T08:38:54 IST" duration-ms="15" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@5f7b97da]" started-at="2026-10-20T08:38:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-10-20T08:42:32 IST" duration-ms="217846" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Successful login with valid credentials"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["OrangeHRM Login"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.TestRunner@5f7b97da]" started-at="2026-10-20T08:42:32 IST" name="tearDownClass" finished-at="2026-10-20T08:42:32 IST" duration-ms="33" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- runners.TestRunner -->
-    </test> <!-- Firefox Tests -->
-  </suite> <!-- AI Enhanced Automation Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
