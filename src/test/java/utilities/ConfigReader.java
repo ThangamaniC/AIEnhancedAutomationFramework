@@ -13,6 +13,8 @@ public class ConfigReader {
 	 
 	 private static final Logger logger =
 		        LogManager.getLogger(ConfigReader.class);
+	 private static final ThreadLocal<String> browser =
+		        new ThreadLocal<>();
 
 	 
 	 static
@@ -31,7 +33,19 @@ public class ConfigReader {
 		    }
 	 }
 	 public static String getBrowser() {
+		    String browserName = browser.get();
+
+		    if (browserName != null) {
+		        return browserName;
+		    }
+
 		    return properties.getProperty("browser");
+		}
+	 public static void setBrowser(String browserName) {
+		    browser.set(browserName);
+		}
+	 public static void removeBrowser() {
+		    browser.remove();
 		}
 
 		public static String getUrl() {

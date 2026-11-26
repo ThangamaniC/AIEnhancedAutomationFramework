@@ -1,65 +1,111 @@
 package pages;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebElement;
 
-public class LoginPage {
-	 private final WebDriver driver;
-	 private final WebDriverWait wait;
+/**
+ * LoginPage class for OrangeHRM application login operations
+ * Extends BasePage to leverage reusable Selenium methods
+ * Handles login form interactions and dashboard verification
+ */
+public class LoginPage extends BasePage {
 
-	    public LoginPage(WebDriver driver) {
-	        this.driver = driver;
-	        this.wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-	        }
-	    private static final Logger logger =
-	            LogManager.getLogger(LoginPage.class);
-	    private By txtUsername = By.name("username");
+    private static final Logger logger = LogManager.getLogger(LoginPage.class);
 
-	    private By txtPassword = By.name("password");
+    // ==================== Locators ====================
+    private final By txtUsername = By.name("username");
+    private final By txtPassword = By.name("password");
+    private final By btnLogin = By.cssSelector("button[type='submit']");
+    private final By dashboardHeader = By.xpath("//h6[text()='Dashboard']");
+    private final By errorMessage = By.cssSelector(".oxd-alert-content-text");
 
-	    private By btnLogin = By.cssSelector("button[type='submit']");
+    // ==================== Constructor ====================
 
-	    private By dashboardHeader = By.xpath("//h6[text()='Dashboard']");
-	    private By errorMessage = By.cssSelector(".oxd-alert-content-text");
-	    
-	    public void enterUsername(String username) {
-	    	logger.info("Entering username");
+    /**
+     * Constructor initializes LoginPage with WebDriver instance
+     * 
+     * @param driver WebDriver instance from DriverFactory
+     */
+    public LoginPage(WebDriver driver) {
+        super(driver);
+        logger.debug("LoginPage initialized");
+    }
 
-	    	
-	    	wait.until(ExpectedConditions.visibilityOfElementLocated(txtUsername));
+    // ==================== Login Action Methods ====================
 
-	        driver.findElement(txtUsername).sendKeys(username);
+    /**
+     * Enter username in the username field
+     * Clears any existing text and enters the provided username
+     * 
+     * @param username Username to enter
+     */
+    public void enterUsername(String username) {
+    	 logger.info("Entering username");
+        type(txtUsername, username);
+    }
 
-	    }
-	    public void enterPassword(String password) {
-	    	 logger.info("Entering password");
-	    	wait.until(ExpectedConditions.visibilityOfElementLocated(txtPassword));
-	        driver.findElement(txtPassword).sendKeys(password);
+    /**
+     * Enter password in the password field
+     * Clears any existing text and enters the provided password
+     * 
+     * @param password Password to enter
+     */
+    public void enterPassword(String password) {
+        logger.info("Entering password");
+        type(txtPassword, password);
+    }
 
-	    }
-	    public void clickLoginButton() {
-	    	 logger.info("Clicking Login button");
-	    	wait.until(ExpectedConditions.elementToBeClickable(btnLogin));
+    /**
+     * Click the login button
+     * Waits for button to be clickable before clicking
+     */
+    public void clickLoginButton() {
+        logger.info("Clicking Login button");
+        click(btnLogin);
+    }
 
-	        driver.findElement(btnLogin).click();
+    // ==================== Business Logic Methods ====================
 
-	    }
-	    
-	    public boolean isDashboardDisplayed() {
-	    	wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardHeader));
+    /**
+     * Perform complete login flow with username and password
+     * Encapsulates all login steps in a single business method
+     * 
+     * @param username Username for login
+     * @param password Password for login
+     */
+    public void login(String username, String password) {
+        logger.info("Performing login");
+        enterUsername(username);
+        enterPassword(password);
+        clickLoginButton();
+        logger.info("Login steps completed");
+    }
 
-	        return driver.findElement(dashboardHeader).isDisplayed();
+    // ==================== Verification Methods ====================
 
-	    }
-	    public String getErrorMessage() {
-	    	wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage));
+    /**
+     * Verify if Dashboard page is displayed after login
+     * Waits for dashboard header to be visible
+     * 
+     * @return true if dashboard header is visible and displayed, false otherwise
+     */
+    public boolean isDashboardDisplayed() {
+        logger.info("Verifying Dashboard page is displayed");
+        WebElement element = waitForVisibility(dashboardHeader);
+        return element.isDisplayed();
+    }
 
-	        return driver.findElement(errorMessage).getText();
-	    }
+    /**
+     * Get error message displayed on login page
+     * Waits for error message to be visible before retrieving text
+     * 
+     * @return Error message text
+     */
+    public String getErrorMessage() {
+        logger.info("Getting error message from login page");
+        return getText(errorMessage);
+    }
 }

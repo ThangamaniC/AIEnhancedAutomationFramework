@@ -1,7 +1,7 @@
 package driver;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,12 +10,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 
-    // One WebDriver instance for each thread
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-    
+    private static final ThreadLocal<WebDriver> driver =
+            new ThreadLocal<>();
+
     private static final Logger logger =
             LogManager.getLogger(DriverFactory.class);
-
 
     public static WebDriver initializeDriver(String browser) {
 
@@ -37,36 +36,33 @@ public class DriverFactory {
 
             default:
                 throw new IllegalArgumentException(
-                    "Unsupported browser : " + browser
+                        "Unsupported browser : " + browser
                 );
         }
+
         logger.info("Initializing browser: {}", browser);
 
-        // Store driver for the current thread
         driver.set(webDriver);
 
-        // Browser configuration
         getDriver().manage().window().maximize();
         getDriver().manage().deleteAllCookies();
+
         logger.info("Browser initialized successfully");
 
-
         return getDriver();
-  
     }
-    
+
     public static WebDriver getDriver() {
         return driver.get();
     }
 
     public static void quitDriver() {
 
-        if (driver.get() != null) {
-        	logger.info("Closing browser");
+        WebDriver webDriver = driver.get();
 
-            driver.get().quit();
-
-            // Remove driver from current thread
+        if (webDriver != null) {
+            logger.info("Closing browser");
+            webDriver.quit();
             driver.remove();
         }
     }

@@ -4,7 +4,7 @@ Feature: OrangeHRM Login
   I want to log in to the application
   So that I can access the Dashboard
 
-  @Smoke @Login
+  @sanity @Login
   Scenario Outline: Successful login with valid credentials
 
     Given User launches the OrangeHRM application
@@ -15,7 +15,7 @@ Feature: OrangeHRM Login
     
     Examples:
     	|username | password|
-    	|Admin    |admin1234 |
+    	|Admin    |admin123 |
     	
     
   @Regression @Login
