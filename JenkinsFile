@@ -7,12 +7,16 @@ pipeline {
             choices: ['smoke', 'sanity', 'regression'],
             description: 'Select test suite'
         )
-    
-        choice(
+            choice(
             name: 'ENVIRONMENT',
             choices: ['QA', 'UAT', 'STAGING'],
             description: 'Select the execution environment'
         )
+        choice(
+        name: 'BROWSER',
+        choices: ['chrome', 'firefox', 'edge'],
+        description: 'Select the execution browser'
+    )
     }
 
 
@@ -37,7 +41,7 @@ pipeline {
         }*/
         stage('Execute Tests') {
             steps {
-                bat "mvn test -Dcucumber.filter.tags=@${params.TEST_SUITE}"
+                bat "mvn test -Denv=${params.ENVIRONMENT} -Dbrowser=${params.BROWSER} -Dcucumber.filter.tags=@${params.TEST_SUITE}"
             }
         }
     }
