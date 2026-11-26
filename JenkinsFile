@@ -7,6 +7,12 @@ pipeline {
             choices: ['smoke', 'sanity', 'regression'],
             description: 'Select test suite'
         )
+    
+        choice(
+            name: 'ENVIRONMENT',
+            choices: ['QA', 'UAT', 'STAGING'],
+            description: 'Select the execution environment'
+        )
     }
 
 

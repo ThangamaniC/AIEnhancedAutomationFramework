@@ -19,6 +19,7 @@ public class Hooks {
     public void setUp() {
     	 logger.info("Starting test setup");
         DriverFactory.initializeDriver(ConfigReader.getBrowser());
+        DriverFactory.getDriver().get(ConfigReader.getUrl());
         logger.info("Test setup completed");
        
     }
