@@ -31,7 +31,7 @@ pipeline {
         }*/
         stage('Execute Tests') {
             steps {
-                bat "mvn test -Dgroups=${params.TEST_SUITE}"
+                bat "mvn test -Dcucumber.filter.tags=@${params.TEST_SUITE}"
             }
         }
     }
