@@ -1,6 +1,14 @@
 pipeline {
 
     agent any
+    parameters {
+        choice(
+            name: 'TEST_SUITE',
+            choices: ['smoke', 'sanity', 'regression'],
+            description: 'Select test suite'
+        )
+    }
+
 
     stages {
 
@@ -16,9 +24,14 @@ pipeline {
             }
         }
 
-        stage('Test') {
+       /* stage('Test') {
             steps {
                 bat 'mvn test'
+            }
+        }*/
+        stage('Execute Tests') {
+            steps {
+                bat "mvn test -Dgroups=${params.TEST_SUITE}"
             }
         }
     }
@@ -35,13 +48,17 @@ pipeline {
                 reportName: 'Extent Test Report'
             ])
 
-            archiveArtifacts artifacts: 'target/screenshots/**/*',
+            archiveArtifacts (
+				artifacts: 'target/screenshots/**/*',
                              allowEmptyArchive: true,
                              fingerprint: true
+                             )
                              
-            archiveArtifacts artifacts: 'target/logs/**/*',
+            archiveArtifacts (
+				 artifacts: 'target/logs/**/*',
                          allowEmptyArchive: true,
                          fingerprint: true
+                         )
                          
                          junit 'target/surefire-reports/*.xml'
         }
